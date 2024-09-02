@@ -1,0 +1,40 @@
+header
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(44, 168, 255, 0.67);
+
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  nav {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    .nav-right {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+button {
+  background-color: #2ca8ff;
+  padding: 10px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+}
+

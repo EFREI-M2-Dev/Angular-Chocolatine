@@ -1,0 +1,10 @@
+<section class="quiz">
+  <div class="question" *ngFor="let question of questions; let i = index">
+    <h3>Question {{ i + 1 }} : {{ question.question }}</h3>
+    <div class="reponses">
+      <button class="reponse"  *ngFor="let answer of question.answers; let j = index" [ngClass]="{'lock': answer.locked}" (click)="lockAnswer(i, j)">{{ answer.answer }}</button>
+    </div>
+  </div>
+
+  <button class="answer" (click)="checkAnswers()">answers</button>
+</section>
