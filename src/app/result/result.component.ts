@@ -10,9 +10,12 @@ import {QuizService} from "../quiz.service";
 
 export class ResultComponent {
   score = 0;
+  questions = this.quizService.questions;
 
   constructor(private quizService: QuizService) {
 
     this.score = this.quizService.score;
   }
+
+
 }

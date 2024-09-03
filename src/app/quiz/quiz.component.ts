@@ -11,7 +11,6 @@ export class QuizComponent {
 
   constructor(private router: Router, private quizService: QuizService) { }
 
-  showResults = false;
   questions = this.quizService.questions;
 
   lockAnswer(questionIndex: number, answerIndex: number): void {
@@ -23,15 +22,7 @@ export class QuizComponent {
   }
 
   checkAnswers(): void {
-    this.quizService.score = 0;
-    this.quizService.questions.forEach((question) => {
-      question.answers.forEach((answer) => {
-        if (answer.locked && answer.correct) {
-          this.quizService.score++;
-        }
-      });
-    });
-    console.log(this.quizService.score);
+    this.quizService.checkAnswers();
     this.router.navigateByUrl(`/result`);
   }
 
