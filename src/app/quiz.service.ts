@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable} from "rxjs";
@@ -22,17 +22,15 @@ export class QuizService {
   questions: Question[] = [];
   score = 0;
 
-  getQuestions(): Observable<any[]> {
+  constructor(private http: HttpClient) { }
+
+  getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>('http://localhost:3000/questions').pipe(
       map((data: Question[]) => {
         this.questions = data;
-        return data;
+        return this.questions;
       })
     );
-  }
-
-  constructor(private http: HttpClient) {
-    this.getQuestions().subscribe();
   }
 
   checkAnswers(): void {
@@ -44,5 +42,9 @@ export class QuizService {
         }
       });
     });
+  }
+
+  shuffleAnswers(questionIndex: number): void {
+    this.questions[questionIndex].answers.sort(() => Math.random() - 0.5);
   }
 }

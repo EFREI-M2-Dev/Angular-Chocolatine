@@ -1,17 +1,31 @@
-import { Component } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {QuizService} from "../quiz.service";
+
+export interface Question {
+  question: string;
+  answers: Answer[];
+}
+
+export interface Answer {
+  answer: string;
+  correct: boolean;
+  locked: boolean;
+}
 
 @Component({
   selector: 'app-quiz',
   templateUrl: './quiz.component.html',
   styleUrls: ['./quiz.component.scss']
 })
-export class QuizComponent {
 
-  constructor(private router: Router, private quizService: QuizService) { }
+export class QuizComponent implements OnInit, OnDestroy {
+  questions: Question[] = [];
 
-  questions = this.quizService.questions;
+  constructor(private router: Router, private quizService: QuizService) {
+    this.quizService.getQuestions();
+    this.questions = this.quizService.questions;
+  }
 
   lockAnswer(questionIndex: number, answerIndex: number): void {
     this.quizService.questions[questionIndex].answers.forEach((answer) => {
@@ -26,13 +40,17 @@ export class QuizComponent {
     this.router.navigateByUrl(`/result`);
   }
 
-  shuffleAnswers(questionIndex: number): void {
-    this.quizService.questions[questionIndex].answers.sort(() => Math.random() - 0.5);
-  }
 
   ngOnInit() {
-    this.quizService.questions.forEach((question, index) => {
-      this.shuffleAnswers(index);
+    this.quizService.getQuestions().subscribe((questions: Question[]) => {
+      this.questions = questions;
+      this.questions.forEach((_, index) => {
+        this.quizService.shuffleAnswers(index);
+      });
     });
+  }
+
+  ngOnDestroy() {
+    this.quizService.getQuestions().subscribe().unsubscribe();
   }
 }
