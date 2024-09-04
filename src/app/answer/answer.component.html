@@ -1,0 +1,8 @@
+<button
+  class="reponse"
+  [ngClass]="{'lock': isLocked}"
+  (click)="onSelectAnswer()"
+  [attr.aria-pressed]="isLocked"
+>
+  {{ answer.answer }}
+</button>

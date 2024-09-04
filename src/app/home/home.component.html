@@ -1,5 +1,23 @@
 <section class="home">
   <h1>Welcome to the quiz</h1>
   <p>Click on the button below to start the quiz</p>
-  <button class="start"><a routerLink="/{{quizLink}}">Quiz</a></button>
+
+
+  <form
+    *ngIf = "!isConnected"
+    [formGroup]="profileForm"
+    (ngSubmit)="onSubmit()"
+
+  >
+    <label for="name">Pseudonyme : </label>
+    <input
+      type="text"
+      id="name"
+      formControlName="name"
+      required
+    >
+    <button class="submit" [disabled]="isEmpty">Quiz</button>
+  </form>
+
+  <button *ngIf = "isConnected" class="submit"><a routerLink="/quiz">Quiz</a></button>
 </section>

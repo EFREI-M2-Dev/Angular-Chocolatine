@@ -1,0 +1,31 @@
+<form
+  class="form"
+  [formGroup]="registerForm"
+  (ngSubmit)="addUser()"
+  >
+  <label for="username">Pseudonyme : </label>
+  <input
+    type="text"
+    id="username"
+    formControlName="username"
+    required
+  >
+  <label for="password">Password : </label>
+  <input
+    type="password"
+    id="password"
+    formControlName="password"
+    required
+    >
+  <button class="submit" [disabled]="registerForm.invalid">Register</button>
+</form>
+
+
+<div *ngIf="successMessage" class="success-message">
+  {{ successMessage }}
+</div>
+
+<p *ngIf="registerForm.invalid && (registerForm.touched || registerForm.dirty)" class="register_error">
+  {{ getErrorLabel }}
+</p>
+

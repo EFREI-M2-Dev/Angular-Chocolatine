@@ -21,8 +21,11 @@ export interface Answer {
 export class QuizService {
   questions: Question[] = [];
   score = 0;
+  currentUser = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    //this.currentUser = window.localStorage.getItem('user')!.replaceAll("\"", "") || '';
+  }
 
   getQuestions(): Observable<Question[]> {
     return this.http.get<Question[]>('http://localhost:3000/questions').pipe(

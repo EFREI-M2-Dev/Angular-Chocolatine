@@ -1,17 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from "../quiz.service";
-
-export interface Question {
-  question: string;
-  answers: Answer[];
-}
-
-export interface Answer {
-  answer: string;
-  correct: boolean;
-  locked: boolean;
-}
+import {Question} from "../interfaces";
+import {AuthService} from "../auth.service";
 
 @Component({
   selector: 'app-quiz',
@@ -21,18 +12,10 @@ export interface Answer {
 
 export class QuizComponent implements OnInit, OnDestroy {
   questions: Question[] = [];
+  username: string = '';
 
-  constructor(private router: Router, private quizService: QuizService) {
-    this.quizService.getQuestions();
-    this.questions = this.quizService.questions;
-  }
-
-  lockAnswer(questionIndex: number, answerIndex: number): void {
-    this.quizService.questions[questionIndex].answers.forEach((answer) => {
-      answer.locked = false;
-    });
-    this.quizService.questions[questionIndex].answers[answerIndex].locked = true;
-    console.log(this.quizService.questions[questionIndex]);
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private authService: AuthService) {
+    this.username = this.authService.user?.username || '';
   }
 
   checkAnswers(): void {
@@ -48,6 +31,16 @@ export class QuizComponent implements OnInit, OnDestroy {
         this.quizService.shuffleAnswers(index);
       });
     });
+
+    console.log(this.questions);
+  }
+
+  onLockAnswer(event: { questionIndex: number, answerIndex: number }): void {
+    const { questionIndex, answerIndex } = event;
+    this.questions[questionIndex].answers.forEach((answer) => {
+      answer.locked = false;
+    });
+    this.questions[questionIndex].answers[answerIndex].locked = true;
   }
 
   ngOnDestroy() {

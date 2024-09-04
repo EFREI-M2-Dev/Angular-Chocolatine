@@ -6,37 +6,15 @@
   box-shadow: black 0px 0px 10px;
 }
 
-.question {
-  h3 {
-    padding: 10px 10px 0 10px;
-    text-align: center;
-  }
-}
 
-.reponses {
+
+.result {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-
-  .reponse {
-    width: 30%;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: black 0px 0px 5px;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-weight: bold;
-
-    &:hover {
-      background-color: #2ca8ff;
-    }
-  }
-
-  .lock {
-    background-color: #2ca8ff;
-  }
+  margin-top: 20px;
 }
+
 
 .answer {
   width: 30%;
@@ -53,9 +31,8 @@
   }
 }
 
-.result {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.name {
+  font-size: 1.5em;
+  text-align: center;
   margin-top: 20px;
 }

@@ -7,10 +7,11 @@
     <div class="nav-left">
       <button><a routerLink="/home">Home</a></button>
     </div>
-
     <div class="nav-right">
-      <button><a routerLink="/login">Login</a></button>
-      <button><a routerLink="/register">Register</a></button>
+      <h2>{{ getUsername }}</h2>
+      <button *ngIf="!isConnected"><a routerLink="/login">Login</a></button>
+      <button *ngIf="!isConnected"><a routerLink="/register">Register</a></button>
+      <button *ngIf="isConnected"><a (click)="logout()">Se déconnecter</a></button>
     </div>
   </nav>
 </header>

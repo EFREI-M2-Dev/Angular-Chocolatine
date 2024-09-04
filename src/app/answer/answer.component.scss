@@ -1,0 +1,21 @@
+
+.reponse {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: black 0px 0px 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    background-color: #2ca8ff;
+  }
+}
+
+
+.lock {
+  background-color: #2ca8ff;
+}
+
+
