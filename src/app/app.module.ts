@@ -14,6 +14,8 @@ import { AnswerComponent } from './answer/answer.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AnswerTimePipe } from './answer-time.pipe';
+import { AnswerLetterDirective } from './answer-letter.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { RegisterComponent } from './register/register.component';
     QuestionComponent,
     AnswerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AnswerTimePipe,
+    AnswerLetterDirective
   ],
   imports: [
     BrowserModule,

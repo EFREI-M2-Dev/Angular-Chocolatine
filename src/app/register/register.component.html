@@ -17,6 +17,13 @@
     formControlName="password"
     required
     >
+  <label for="confirmPassword">Confirm Password : </label>
+  <input
+    type="password"
+    id="confirmPassword"
+    formControlName="confirmPassword"
+    required
+    >
   <button class="submit" [disabled]="registerForm.invalid">Register</button>
 </form>
 
@@ -28,4 +35,3 @@
 <p *ngIf="registerForm.invalid && (registerForm.touched || registerForm.dirty)" class="register_error">
   {{ getErrorLabel }}
 </p>
-

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {QuizService} from "../quiz.service";
+import {getLocaleDateFormat} from "@angular/common";
 
 @Component({
   selector: 'app-result',
@@ -11,6 +12,7 @@ import {QuizService} from "../quiz.service";
 export class ResultComponent {
   score = 0;
   questions = this.quizService.questions;
+  dateObj: number = Date.now();
 
   constructor(private quizService: QuizService) {
 
@@ -18,4 +20,5 @@ export class ResultComponent {
   }
 
 
+    protected readonly getLocaleDateFormat = getLocaleDateFormat;
 }

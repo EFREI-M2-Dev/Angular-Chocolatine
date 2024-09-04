@@ -31,8 +31,9 @@ export class QuizComponent implements OnInit, OnDestroy {
         this.quizService.shuffleAnswers(index);
       });
     });
+    this.quizService.startDate = Date.now();
 
-    console.log(this.questions);
+    console.log(this.quizService.startDate);
   }
 
   onLockAnswer(event: { questionIndex: number, answerIndex: number }): void {

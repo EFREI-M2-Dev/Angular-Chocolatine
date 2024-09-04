@@ -3,6 +3,8 @@
   [ngClass]="{'lock': isLocked}"
   (click)="onSelectAnswer()"
   [attr.aria-pressed]="isLocked"
+  appAnswerLetter
+  [answerIndex]="answerIndex"
 >
   {{ answer.answer }}
 </button>

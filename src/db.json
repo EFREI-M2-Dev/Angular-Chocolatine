@@ -23,7 +23,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "6ca2"
     },
     {
       "question": "Quel navire est considéré comme le porte-avions légendaire de l'Eagle Union ?",
@@ -48,7 +49,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "3133"
     },
     {
       "question": "Quelle faction est représentée par des navires aux thèmes inspirés de l'Asie de l'Est ?",
@@ -73,7 +75,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "022e"
     },
     {
       "question": "Quelle est la classe de navires à laquelle appartient le navire 'Bismarck' ?",
@@ -98,7 +101,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "61b8"
     },
     {
       "question": "Quel navire est le chef de file du Royal Navy dans Azur Lane ?",
@@ -123,7 +127,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "66f9"
     },
     {
       "question": "Quelle faction est connue pour utiliser des technologies avancées et mystérieuses ?",
@@ -148,7 +153,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "4125"
     },
     {
       "question": "Quel navire est souvent appelé 'Gray Ghost' dans l'univers d'Azur Lane ?",
@@ -173,7 +179,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "f86e"
     },
     {
       "question": "Quel est le type de navire le plus rapide dans le jeu Azur Lane ?",
@@ -198,7 +205,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "7559"
     },
     {
       "question": "Quelle faction a un style de combat qui privilégie l'attaque rapide et la mobilité ?",
@@ -223,7 +231,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "84bd"
     },
     {
       "question": "Quel navire est célèbre pour avoir participé à la bataille du détroit de Surigao ?",
@@ -248,7 +257,8 @@
           "correct": false,
           "locked": false
         }
-      ]
+      ],
+      "id": "ff5f"
     }
   ],
   "users": [
@@ -261,6 +271,36 @@
       "id": "d1d7",
       "username": "tutu",
       "password": "tutu"
+    },
+    {
+      "id": "edc0",
+      "username": "choco",
+      "password": "choco",
+      "confirmPassword": "chocc"
+    },
+    {
+      "id": "e602",
+      "username": "toto",
+      "password": "toto",
+      "confirmPassword": "tota"
+    },
+    {
+      "id": "6e7c",
+      "username": "tututu",
+      "password": "toto",
+      "confirmPassword": "toto"
+    },
+    {
+      "id": "84fb",
+      "username": "admins",
+      "password": "toto",
+      "confirmPassword": "toto"
+    },
+    {
+      "id": "d7c9",
+      "username": "test",
+      "password": "test",
+      "confirmPassword": "test"
     }
   ]
 }

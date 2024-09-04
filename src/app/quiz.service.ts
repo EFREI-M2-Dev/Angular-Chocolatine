@@ -22,6 +22,7 @@ export class QuizService {
   questions: Question[] = [];
   score = 0;
   currentUser = '';
+  startDate: number | undefined;
 
   constructor(private http: HttpClient) {
     //this.currentUser = window.localStorage.getItem('user')!.replaceAll("\"", "") || '';

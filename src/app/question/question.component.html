@@ -8,3 +8,6 @@
     (selectAnswer)="onLockAnswer($event)"
   ></app-answer>
 </div>
+<div class="time">
+  <p *ngIf="dateAnswer">Votre temps de réponse : {{ dateAnswer | answerTime | date: 'mm:ss.SSS' }}</p>
+</div>
