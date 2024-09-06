@@ -1,0 +1,9 @@
+{
+  "title": "Angular Quiz",
+  "header": {
+    "logout": "Déconnection",
+    "login": "Connexion",
+    "register": "Inscription",
+    "home": "Accueil"
+  }
+}

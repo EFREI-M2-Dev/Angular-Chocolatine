@@ -2,16 +2,30 @@
   <div class="title">
     <h1>Quiz Azur Lane</h1>
   </div>
+  <div class="language">
+    <button (click)="useLanguage('fr')"><img crossorigin="anonymous"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/1280px-Flag_of_France.svg.png?20120916041411"
+                                             class="mw-mmv-final-image svg" alt="File:Flag of France.svg" width="64"
+                                             height="48"></button>
+    <button (click)="useLanguage('en')"><img crossorigin="anonymous"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/English_language.svg/1280px-English_language.svg.png?20141018184419"
+                                             class="mw-mmv-final-image svg" alt="File:English language.svg" width="64"
+                                             height="48"></button>
+    <button (click)="useLanguage('jp')"><img crossorigin="anonymous"
+                                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Flag_of_Japan.svg/1280px-Flag_of_Japan.svg.png?20090916032838"
+                                             class="mw-mmv-final-image svg" alt="File:Flag of Japan.svg" width="64"
+                                             height="48"></button>
+  </div>
 
   <nav>
     <div class="nav-left">
-      <button><a routerLink="/home">Home</a></button>
+      <button><a routerLink="/home">{{ "header.home" | translate }}</a></button>
     </div>
     <div class="nav-right">
       <h2>{{ getUsername }}</h2>
-      <button *ngIf="!isConnected"><a routerLink="/login">Login</a></button>
-      <button *ngIf="!isConnected"><a routerLink="/register">Register</a></button>
-      <button *ngIf="isConnected"><a (click)="logout()">Se déconnecter</a></button>
+      <button *ngIf="!isConnected"><a routerLink="/login">{{ "header.login" | translate }}</a></button>
+      <button *ngIf="!isConnected"><a routerLink="/register">{{ "header.register" | translate }}</a></button>
+      <button *ngIf="isConnected"><a (click)="logout()">{{ "header.logout" | translate }}</a></button>
     </div>
   </nav>
 </header>

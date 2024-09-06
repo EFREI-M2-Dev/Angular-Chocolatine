@@ -13,9 +13,14 @@ import {AuthService} from "../auth.service";
 export class QuizComponent implements OnInit, OnDestroy {
   questions: Question[] = [];
   username: string = '';
+  showPopup: any;
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private authService: AuthService) {
     this.username = this.authService.user?.username || '';
+  }
+
+  validateQuiz(): void {
+    this.showPopup = true;
   }
 
   checkAnswers(): void {
